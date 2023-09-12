@@ -50,5 +50,14 @@ def h1(s):
 
 def h3(s):
     # implement this function
+    goal = (1, 2, 3, 4, 5, 6, 7, 8, 0)
     board, _, _ = s
-    return 0
+    res = 0
+    for idx, space in enumerate(board):
+        if(space != 0):
+            goal_location = goal.index(space)
+            row_board, col_board = idx // 3, idx % 3 #current space
+            row_goal, col_goal = goal_location // 3, goal_location % 3 #goal space
+            distance = abs(row_board - row_goal) + abs(col_board - col_goal)
+            res += distance
+    return res
