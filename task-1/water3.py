@@ -6,7 +6,6 @@ def is_goal(s):
 
 def successors(s):
     x, y, z = s
-
      # Try to empty one bottle
     if x > 0:
         yield ((0, y, z), x)
